@@ -12,6 +12,17 @@ public class User {
         this.createAt = createAt;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", createAt='" + createAt + '\'' +
+                '}';
+    }
+
     private String name;
     private String password;
     private String createAt;
