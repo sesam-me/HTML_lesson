@@ -1,8 +1,7 @@
 package com.playdata.todos.dao;
 import com.playdata.todos.config.JdbcConnection;
-import com.playdata.todos.config.LogoutThread;
-import com.playdata.todos.dto.User;
-import javax.jws.soap.SOAPBinding;
+import com.playdata.todos.dto.dto.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,7 +23,7 @@ public class UserDao {
             throw new RuntimeException(e);
         }
     }
-    public boolean login(String username, String password){
+    public User login(String username, String password){
         List<User> users = new ArrayList<User>();
         Connection conn = new JdbcConnection().getJdbc();
         String sql = "select * from users where username = ? and password = ?";
@@ -41,11 +40,11 @@ public class UserDao {
         }
         if (users.size() != 0) { // size가 0이 아니라면(users에 로그인한 사람이 있다면 1명, 어차리 로그인하는 사람은 1명)
             me=users.get(0); // 첫번째 사람을 me에 넣어라(어차피 1명)
-            new LogoutThread().start(); // sleep기간동안 움직이 않으면, 자동으로 로그아웃
-            return true;
+//            new LogoutThread().start(); // sleep기간동안 움직이 않으면, 자동으로 로그아웃
+            return users.get(0);
 
         }
-        return false; // 로그인 실패했을 때는 false
+        return null;
     }
     private User makeUser(ResultSet resultSet){
         try {

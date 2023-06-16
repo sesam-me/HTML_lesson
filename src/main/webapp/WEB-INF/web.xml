@@ -50,4 +50,17 @@
 
 
 
+
+
+  <servlet>
+    <servlet-name>BackServlet</servlet-name>
+    <servlet-class>com.playdata.todos.servlet.BackServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BackServlet</servlet-name>
+    <url-pattern>/back</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
