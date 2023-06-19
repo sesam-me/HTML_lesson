@@ -7,10 +7,17 @@
     <title>Main</title>
 </head>
 <body>
-    <%
-    if(session.getAttribute("uid")==null)
-        response.sendRedirect("/login");
-    %>
+<%@ include file="header.jsp"%>
+
+
+<%--<%@ include file="header.jsp"%> 랑 동일한거임. 시작할 때 로그인화면 뜨는거--%>
+<%--    <%--%>
+<%--    if(session.getAttribute("uid")==null)--%>
+<%--        response.sendRedirect("/login");--%>
+<%--    %>--%>
+
+
+
 
   <img src="/img/ffsf.png">
 
@@ -28,6 +35,7 @@
     <%@ include file="todos.jsp"%>
     <%@ include file="todolist.jsp"%>
     <%@ include file="keyword.jsp"%>
+
   <a href="/back">back</a>
 </body>
 </html>
