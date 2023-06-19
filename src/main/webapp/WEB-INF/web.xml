@@ -7,6 +7,26 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+<!--한글로 나오게 하는거-->
+  <filter>
+    <filter-name>setCharacterEncodingFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>setCharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+
+
+
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>userServlet</servlet-name>
@@ -60,6 +80,45 @@
   <servlet-mapping>
     <servlet-name>BackServlet</servlet-name>
     <url-pattern>/back</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+  <servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>com.playdata.todos.servlet.UpdateServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+
+
+
+  <servlet>
+    <servlet-name>todoInsertServlet</servlet-name>
+    <servlet-class>com.playdata.todos.servlet.TodoInsertServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>todoInsertServlet</servlet-name>
+    <url-pattern>/todoinsert</url-pattern>
+  </servlet-mapping>
+
+
+
+
+  <servlet>
+    <servlet-name>todoUpdatetServlet</servlet-name>
+    <servlet-class>com.playdata.todos.servlet.TodoUpdateServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>todoUpdatetServlet</servlet-name>
+    <url-pattern>/todoupdate</url-pattern>
   </servlet-mapping>
 
 

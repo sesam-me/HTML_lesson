@@ -1,6 +1,6 @@
 package com.playdata.todos.dao;
 import com.playdata.todos.config.JdbcConnection;
-import com.playdata.todos.dto.dto.User;
+import com.playdata.todos.dto.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -2,7 +2,7 @@ package com.playdata.todos.servlet;
 
 import com.playdata.todos.config.History;
 import com.playdata.todos.dao.UserDao;
-import com.playdata.todos.dto.dto.User;
+import com.playdata.todos.dto.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 //        setAttribute : 객체에 이름과 값을 지정하여 속성을 저장하는 역할
         HttpSession session = req.getSession();
         session.setAttribute("uname", user.getName()); // uname의 속성을 user.getName()으로 설정
+        session.setAttribute("uid", user.getId()); // uname의 속성을 user.getName()으로 설정
 
         if(user != null) {
             resp.sendRedirect("/main");

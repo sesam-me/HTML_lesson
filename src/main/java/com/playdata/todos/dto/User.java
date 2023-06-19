@@ -1,4 +1,4 @@
-package com.playdata.todos.dto.dto;
+package com.playdata.todos.dto;
 public class User {
     private Integer id;
     private String username;

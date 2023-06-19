@@ -2,7 +2,7 @@ package com.playdata.todos.servlet;
 
 import com.playdata.todos.config.History;
 import com.playdata.todos.dao.UserDao;
-import com.playdata.todos.dto.dto.User;
+import com.playdata.todos.dto.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
